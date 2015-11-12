@@ -1,2 +1,5 @@
 *.class
 **/*.class
+build
+build/classes/**/*.class
+build/libs/*.jar
