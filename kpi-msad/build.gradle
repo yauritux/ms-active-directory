@@ -1,0 +1,26 @@
+apply plugin: 'java'
+
+version = '1.0.0'
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+jar {
+  into('lib') {
+    from 'lib'
+  }
+  manifest {
+    attributes 'Implementation-Title': 'KPI MSAD Connector',
+    'Implementation-Version': version
+  }
+}
+
+//Get dependencies from Maven Central Repository
+repositories {
+  mavenLocal()
+  mavenCentral()
+}
+
+//Project dependencies
+dependencies {
+  compile fileTree(dir: 'lib', includes: ['*.jar'])
+}
